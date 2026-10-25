@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!-- 위젯 확장은 반드시 샌드박스 -->
+  <key>com.apple.security.app-sandbox</key><true/>
+  <!-- 개발자 계정 없이 App Group을 쓸 수 없어서, 앱의 데이터 폴더만 직접 읽고 쓰도록 허용한다 -->
+  <key>com.apple.security.temporary-exception.files.home-relative-path.read-write</key>
+  <array>
+    <string>/Library/Application Support/AlphaCenter/</string>
+  </array>
+</dict>
+</plist>

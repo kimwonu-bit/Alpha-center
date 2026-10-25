@@ -1,0 +1,672 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05C8A1ADF3A764E456B552C3 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67774E60114E503B606AF2A /* FontManager.swift */; };
+		07FA05D9127F468200583771 /* PomodoroWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F29D6243BCA7C2623E2BE /* PomodoroWidget.swift */; };
+		083C000EAD24546AFED19B12 /* CelebrationOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3987FDF40743C68A7E4E868 /* CelebrationOverlay.swift */; };
+		0DA4C8C8E5072B25E73810C4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B12A848B072A671B443B81C /* Models.swift */; };
+		1784DBD532F335AC023A347C /* EventEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F375A57E9B0E243DA32DFB /* EventEditor.swift */; };
+		1B0F23E2E9D6E77C4F8C8C24 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C3CA6D7AF29A08F737568 /* DesignSystem.swift */; };
+		206FF9BCA21A88126C6A5AE8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A36C24C92FDEAF264E4153 /* Settings.swift */; };
+		208FE13A859DE6BF960D2C3B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BAAF5A9F455AA8D23AC354 /* CalendarView.swift */; };
+		2DF101B94F4594AFE05AC418 /* CalendarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97965739D2A33086B8AAB7F1 /* CalendarWidget.swift */; };
+		30A607569F283BDE903B0A6C /* AlphaMeme.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5A79A7BAC160E0FB5112A71 /* AlphaMeme.jpg */; };
+		311905AD5F84D3EBDCBDF663 /* AlphaWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB515CB22CF3A3ECDF8BD82B /* AlphaWidgets.swift */; };
+		39F24DE84B31098C80F6F1F5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC117ADF74AF30B52615491C /* SettingsView.swift */; };
+		3E42B8ECE069F96AD9A7C09B /* SharedUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A134A0486E69539D695537 /* SharedUI.swift */; };
+		45621D492A4DFFB9DFD5B8F3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521789CF83AF8AE873231E82 /* Store.swift */; };
+		4DCECBCD9E01714B71226B89 /* SharedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9B1C85B71899681511826 /* SharedStorage.swift */; };
+		4DF4BB91075E2771010138AB /* AlphaCenterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D2F1D136BEB6A62DBBB4D /* AlphaCenterApp.swift */; };
+		4F9AAAB567FA5BC385BD9287 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1844610B0B4837C686E531C7 /* Fonts */; };
+		52B962F10A45FD91979E9D41 /* TodoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9BA931ECFE20DB142026A6 /* TodoWidget.swift */; };
+		5801580591E287B43C53B3C8 /* TimerLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5958D58F68DF756DFF4D256 /* TimerLogic.swift */; };
+		5EB4EBA1C9543764CFA79B3E /* DebugSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E35D455FEC6AFCA4C49018A /* DebugSnapshot.swift */; };
+		73FE4E96CE2BE650A5D0FE05 /* SharedUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A134A0486E69539D695537 /* SharedUI.swift */; };
+		7BEDFA428EAEC2C6DA34C182 /* SharedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9B1C85B71899681511826 /* SharedStorage.swift */; };
+		7D378B24E6C1760D461A61D1 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C3CA6D7AF29A08F737568 /* DesignSystem.swift */; };
+		82D678DE049832E92B94F1C6 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C77974E32395DCF33BDFECB /* TodoView.swift */; };
+		A15E9BA80B06C5D550EB3F4B /* AlphaWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4455D416BD61B7222D58F016 /* AlphaWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A839CEBEDB1C2B04CB6800D0 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1844610B0B4837C686E531C7 /* Fonts */; };
+		A95FCF25A1028B449083A6F4 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E02E55395706326DE7AAB48 /* Components.swift */; };
+		AF3FD9D51F24E86AADE5FB7E /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3DCF22D65F38EBF8C1B99895 /* AppIcon.icns */; };
+		B07AECBC41FBE36CC443206A /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FB6E1B338F38F5E145A70 /* MenuBarView.swift */; };
+		B3CDE1014A26EBB9985F9534 /* TimerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645B05FCD040383720477F /* TimerEngine.swift */; };
+		B72A5EAA09A55797115944C6 /* WidgetIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0362C22DA1005E8C8173637E /* WidgetIntents.swift */; };
+		C29C17900E7EC39073177171 /* TimerLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5958D58F68DF756DFF4D256 /* TimerLogic.swift */; };
+		C7D9B803DFD61D4A735D7E0A /* TodoSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E78F66574FFAB70D266E85 /* TodoSheets.swift */; };
+		CCB0AF81E8B943988CE2DBB1 /* RoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C2CFA075B83589F9ED00E /* RoutineView.swift */; };
+		CDBB1D4CBDFD3097B263C9F8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B12A848B072A671B443B81C /* Models.swift */; };
+		CFF2DB387ECD07A9E8ED6A33 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C14CB3CEF6237733804A95 /* NotificationManager.swift */; };
+		FA05F0685F9D552E4A8AF29A /* PomodoroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11979377B786FE7508B2E038 /* PomodoroView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F912B6FBB8E35AB441874F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 149F921E112AE41E08D66094 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E044D22134C4137F650710DE;
+			remoteInfo = AlphaWidgets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FE8B2AC5B72A63005DBE1228 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A15E9BA80B06C5D550EB3F4B /* AlphaWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0362C22DA1005E8C8173637E /* WidgetIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetIntents.swift; sourceTree = "<group>"; };
+		0D2C3CA6D7AF29A08F737568 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		11979377B786FE7508B2E038 /* PomodoroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroView.swift; sourceTree = "<group>"; };
+		132F29D6243BCA7C2623E2BE /* PomodoroWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroWidget.swift; sourceTree = "<group>"; };
+		16C14CB3CEF6237733804A95 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		1844610B0B4837C686E531C7 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = Resources/Fonts; sourceTree = SOURCE_ROOT; };
+		1E02E55395706326DE7AAB48 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		26F375A57E9B0E243DA32DFB /* EventEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditor.swift; sourceTree = "<group>"; };
+		3C77974E32395DCF33BDFECB /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
+		3DCF22D65F38EBF8C1B99895 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		4455D416BD61B7222D58F016 /* AlphaWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AlphaWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		521789CF83AF8AE873231E82 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		5B12A848B072A671B443B81C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		5E35D455FEC6AFCA4C49018A /* DebugSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugSnapshot.swift; sourceTree = "<group>"; };
+		66A134A0486E69539D695537 /* SharedUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUI.swift; sourceTree = "<group>"; };
+		6D6D2F1D136BEB6A62DBBB4D /* AlphaCenterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaCenterApp.swift; sourceTree = "<group>"; };
+		837FB6E1B338F38F5E145A70 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		86645B05FCD040383720477F /* TimerEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEngine.swift; sourceTree = "<group>"; };
+		94E9B1C85B71899681511826 /* SharedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStorage.swift; sourceTree = "<group>"; };
+		95A36C24C92FDEAF264E4153 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		95E78F66574FFAB70D266E85 /* TodoSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSheets.swift; sourceTree = "<group>"; };
+		97965739D2A33086B8AAB7F1 /* CalendarWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWidget.swift; sourceTree = "<group>"; };
+		A5A79A7BAC160E0FB5112A71 /* AlphaMeme.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AlphaMeme.jpg; sourceTree = "<group>"; };
+		A67774E60114E503B606AF2A /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		BB515CB22CF3A3ECDF8BD82B /* AlphaWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaWidgets.swift; sourceTree = "<group>"; };
+		BF02DB816267D84A84789FB3 /* AlphaCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlphaCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C26C2CFA075B83589F9ED00E /* RoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineView.swift; sourceTree = "<group>"; };
+		D3987FDF40743C68A7E4E868 /* CelebrationOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationOverlay.swift; sourceTree = "<group>"; };
+		D4BAAF5A9F455AA8D23AC354 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		DA9BA931ECFE20DB142026A6 /* TodoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWidget.swift; sourceTree = "<group>"; };
+		E5958D58F68DF756DFF4D256 /* TimerLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLogic.swift; sourceTree = "<group>"; };
+		FC117ADF74AF30B52615491C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		043986F034CF3535F12281E9 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				D4BAAF5A9F455AA8D23AC354 /* CalendarView.swift */,
+				26F375A57E9B0E243DA32DFB /* EventEditor.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		05397E86BB475A9525385F7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				043986F034CF3535F12281E9 /* Calendar */,
+				2F68CFD1C58D42D88A96EEFC /* Common */,
+				F74A317DF6909DFC1828D2F2 /* Pomodoro */,
+				4C69564448AF6C054846FA7B /* Routine */,
+				C2BA9BC30DDB3A9F89981408 /* Settings */,
+				E3EECCAA6D8358696B7B81DB /* Todo */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2F68CFD1C58D42D88A96EEFC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1E02E55395706326DE7AAB48 /* Components.swift */,
+				837FB6E1B338F38F5E145A70 /* MenuBarView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		33F500528983F048CF8737C5 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7D49060B47F11467E5B897FB /* AlphaCenter */,
+				D015604E3C3820593C3ABEDF /* AlphaWidgets */,
+				D54C2A998CF9525C84FBC156 /* Shared */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4C69564448AF6C054846FA7B /* Routine */ = {
+			isa = PBXGroup;
+			children = (
+				C26C2CFA075B83589F9ED00E /* RoutineView.swift */,
+			);
+			path = Routine;
+			sourceTree = "<group>";
+		};
+		65A96DC967066FC6472E0B89 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5A79A7BAC160E0FB5112A71 /* AlphaMeme.jpg */,
+				3DCF22D65F38EBF8C1B99895 /* AppIcon.icns */,
+				1844610B0B4837C686E531C7 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6BF3DDE72AFA14F344DD3626 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF02DB816267D84A84789FB3 /* AlphaCenter.app */,
+				4455D416BD61B7222D58F016 /* AlphaWidgets.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D49060B47F11467E5B897FB /* AlphaCenter */ = {
+			isa = PBXGroup;
+			children = (
+				EF1945FE389AF7E5475EBEC9 /* App */,
+				EC2C43C1D5C6D7FA13F2F3E9 /* Services */,
+				05397E86BB475A9525385F7C /* Views */,
+			);
+			path = AlphaCenter;
+			sourceTree = "<group>";
+		};
+		83FC115BE00FDB4DB72C27BA = {
+			isa = PBXGroup;
+			children = (
+				65A96DC967066FC6472E0B89 /* Resources */,
+				33F500528983F048CF8737C5 /* Sources */,
+				6BF3DDE72AFA14F344DD3626 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C2BA9BC30DDB3A9F89981408 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FC117ADF74AF30B52615491C /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D015604E3C3820593C3ABEDF /* AlphaWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				BB515CB22CF3A3ECDF8BD82B /* AlphaWidgets.swift */,
+				97965739D2A33086B8AAB7F1 /* CalendarWidget.swift */,
+				132F29D6243BCA7C2623E2BE /* PomodoroWidget.swift */,
+				DA9BA931ECFE20DB142026A6 /* TodoWidget.swift */,
+				0362C22DA1005E8C8173637E /* WidgetIntents.swift */,
+			);
+			path = AlphaWidgets;
+			sourceTree = "<group>";
+		};
+		D54C2A998CF9525C84FBC156 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0D2C3CA6D7AF29A08F737568 /* DesignSystem.swift */,
+				5B12A848B072A671B443B81C /* Models.swift */,
+				94E9B1C85B71899681511826 /* SharedStorage.swift */,
+				66A134A0486E69539D695537 /* SharedUI.swift */,
+				E5958D58F68DF756DFF4D256 /* TimerLogic.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		E3EECCAA6D8358696B7B81DB /* Todo */ = {
+			isa = PBXGroup;
+			children = (
+				D3987FDF40743C68A7E4E868 /* CelebrationOverlay.swift */,
+				95E78F66574FFAB70D266E85 /* TodoSheets.swift */,
+				3C77974E32395DCF33BDFECB /* TodoView.swift */,
+			);
+			path = Todo;
+			sourceTree = "<group>";
+		};
+		EC2C43C1D5C6D7FA13F2F3E9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A67774E60114E503B606AF2A /* FontManager.swift */,
+				16C14CB3CEF6237733804A95 /* NotificationManager.swift */,
+				521789CF83AF8AE873231E82 /* Store.swift */,
+				86645B05FCD040383720477F /* TimerEngine.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EF1945FE389AF7E5475EBEC9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6D6D2F1D136BEB6A62DBBB4D /* AlphaCenterApp.swift */,
+				5E35D455FEC6AFCA4C49018A /* DebugSnapshot.swift */,
+				95A36C24C92FDEAF264E4153 /* Settings.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F74A317DF6909DFC1828D2F2 /* Pomodoro */ = {
+			isa = PBXGroup;
+			children = (
+				11979377B786FE7508B2E038 /* PomodoroView.swift */,
+			);
+			path = Pomodoro;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		563DEC341B3D790C95AFDFA2 /* AlphaCenter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 039B01BA59302BA0D1504233 /* Build configuration list for PBXNativeTarget "AlphaCenter" */;
+			buildPhases = (
+				2EFF9219D8B5FAF1D625DF6C /* Sources */,
+				A3073FC9C4402CD8B75208E5 /* Resources */,
+				FE8B2AC5B72A63005DBE1228 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5EC6885046DE9C1197A765C8 /* PBXTargetDependency */,
+			);
+			name = AlphaCenter;
+			packageProductDependencies = (
+			);
+			productName = AlphaCenter;
+			productReference = BF02DB816267D84A84789FB3 /* AlphaCenter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E044D22134C4137F650710DE /* AlphaWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9EEF4548D25F4804731102C7 /* Build configuration list for PBXNativeTarget "AlphaWidgets" */;
+			buildPhases = (
+				0EB6F8DE57AE82B5F606C630 /* Sources */,
+				0249BB41A21161DDBE746248 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlphaWidgets;
+			packageProductDependencies = (
+			);
+			productName = AlphaWidgets;
+			productReference = 4455D416BD61B7222D58F016 /* AlphaWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		149F921E112AE41E08D66094 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					563DEC341B3D790C95AFDFA2 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+					E044D22134C4137F650710DE = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 7FFC555A3DD7D0E3C315B9E8 /* Build configuration list for PBXProject "AlphaCenter" */;
+			developmentRegion = ko;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				ko,
+			);
+			mainGroup = 83FC115BE00FDB4DB72C27BA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6BF3DDE72AFA14F344DD3626 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				563DEC341B3D790C95AFDFA2 /* AlphaCenter */,
+				E044D22134C4137F650710DE /* AlphaWidgets */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0249BB41A21161DDBE746248 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F9AAAB567FA5BC385BD9287 /* Fonts in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3073FC9C4402CD8B75208E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30A607569F283BDE903B0A6C /* AlphaMeme.jpg in Resources */,
+				AF3FD9D51F24E86AADE5FB7E /* AppIcon.icns in Resources */,
+				A839CEBEDB1C2B04CB6800D0 /* Fonts in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0EB6F8DE57AE82B5F606C630 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				311905AD5F84D3EBDCBDF663 /* AlphaWidgets.swift in Sources */,
+				2DF101B94F4594AFE05AC418 /* CalendarWidget.swift in Sources */,
+				1B0F23E2E9D6E77C4F8C8C24 /* DesignSystem.swift in Sources */,
+				CDBB1D4CBDFD3097B263C9F8 /* Models.swift in Sources */,
+				07FA05D9127F468200583771 /* PomodoroWidget.swift in Sources */,
+				4DCECBCD9E01714B71226B89 /* SharedStorage.swift in Sources */,
+				3E42B8ECE069F96AD9A7C09B /* SharedUI.swift in Sources */,
+				C29C17900E7EC39073177171 /* TimerLogic.swift in Sources */,
+				52B962F10A45FD91979E9D41 /* TodoWidget.swift in Sources */,
+				B72A5EAA09A55797115944C6 /* WidgetIntents.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EFF9219D8B5FAF1D625DF6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DF4BB91075E2771010138AB /* AlphaCenterApp.swift in Sources */,
+				208FE13A859DE6BF960D2C3B /* CalendarView.swift in Sources */,
+				083C000EAD24546AFED19B12 /* CelebrationOverlay.swift in Sources */,
+				A95FCF25A1028B449083A6F4 /* Components.swift in Sources */,
+				5EB4EBA1C9543764CFA79B3E /* DebugSnapshot.swift in Sources */,
+				7D378B24E6C1760D461A61D1 /* DesignSystem.swift in Sources */,
+				1784DBD532F335AC023A347C /* EventEditor.swift in Sources */,
+				05C8A1ADF3A764E456B552C3 /* FontManager.swift in Sources */,
+				B07AECBC41FBE36CC443206A /* MenuBarView.swift in Sources */,
+				0DA4C8C8E5072B25E73810C4 /* Models.swift in Sources */,
+				CFF2DB387ECD07A9E8ED6A33 /* NotificationManager.swift in Sources */,
+				FA05F0685F9D552E4A8AF29A /* PomodoroView.swift in Sources */,
+				CCB0AF81E8B943988CE2DBB1 /* RoutineView.swift in Sources */,
+				206FF9BCA21A88126C6A5AE8 /* Settings.swift in Sources */,
+				39F24DE84B31098C80F6F1F5 /* SettingsView.swift in Sources */,
+				7BEDFA428EAEC2C6DA34C182 /* SharedStorage.swift in Sources */,
+				73FE4E96CE2BE650A5D0FE05 /* SharedUI.swift in Sources */,
+				45621D492A4DFFB9DFD5B8F3 /* Store.swift in Sources */,
+				B3CDE1014A26EBB9985F9534 /* TimerEngine.swift in Sources */,
+				5801580591E287B43C53B3C8 /* TimerLogic.swift in Sources */,
+				C7D9B803DFD61D4A735D7E0A /* TodoSheets.swift in Sources */,
+				82D678DE049832E92B94F1C6 /* TodoView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5EC6885046DE9C1197A765C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E044D22134C4137F650710DE /* AlphaWidgets */;
+			targetProxy = 3F912B6FBB8E35AB441874F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		34B7ACB283AE8B86EA494C19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/AlphaCenter.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_DEBUG_DYLIB = NO;
+				INFOPLIST_FILE = "Config/App-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.bssm.alphacenter;
+				PRODUCT_NAME = AlphaCenter;
+				SDKROOT = macosx;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+			};
+			name = Debug;
+		};
+		35824B29617DFF6F058D7ADC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		361CDF2C221531F0C1315FDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		75A37DDDA6B9B1AA310120C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/AlphaCenter.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_DEBUG_DYLIB = NO;
+				INFOPLIST_FILE = "Config/App-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.bssm.alphacenter;
+				PRODUCT_NAME = AlphaCenter;
+				SDKROOT = macosx;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+			};
+			name = Release;
+		};
+		97CE115E8179785541272903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Config/AlphaWidgets.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_DEBUG_DYLIB = NO;
+				INFOPLIST_FILE = "Config/Widgets-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.bssm.alphacenter.widgets;
+				PRODUCT_NAME = AlphaWidgets;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+			};
+			name = Debug;
+		};
+		EDCDD94BF9F8D0577EB83D51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Config/AlphaWidgets.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_DEBUG_DYLIB = NO;
+				INFOPLIST_FILE = "Config/Widgets-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.bssm.alphacenter.widgets;
+				PRODUCT_NAME = AlphaWidgets;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		039B01BA59302BA0D1504233 /* Build configuration list for PBXNativeTarget "AlphaCenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34B7ACB283AE8B86EA494C19 /* Debug */,
+				75A37DDDA6B9B1AA310120C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7FFC555A3DD7D0E3C315B9E8 /* Build configuration list for PBXProject "AlphaCenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				361CDF2C221531F0C1315FDD /* Debug */,
+				35824B29617DFF6F058D7ADC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9EEF4548D25F4804731102C7 /* Build configuration list for PBXNativeTarget "AlphaWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97CE115E8179785541272903 /* Debug */,
+				EDCDD94BF9F8D0577EB83D51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 149F921E112AE41E08D66094 /* Project object */;
+}

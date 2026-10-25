@@ -1,0 +1,63 @@
+name: AlphaCenter
+options:
+  bundleIdPrefix: kr.hs.bssm
+  deploymentTarget:
+    macOS: "26.0"
+  createIntermediateGroups: true
+  developmentLanguage: ko
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MACOSX_DEPLOYMENT_TARGET: "26.0"
+    MARKETING_VERSION: "1.1.0"
+    CURRENT_PROJECT_VERSION: "2"
+    # 개발자 인증서가 없으면 ad-hoc 서명 (scripts/build_app.sh에서 SIGN_IDENTITY로 바꿀 수 있다)
+    CODE_SIGN_IDENTITY: "-"
+    CODE_SIGN_STYLE: Manual
+    DEVELOPMENT_TEAM: ""
+    ENABLE_HARDENED_RUNTIME: YES
+    SWIFT_APPROACHABLE_CONCURRENCY: YES
+targets:
+  AlphaCenter:
+    type: application
+    platform: macOS
+    sources:
+      - Sources/AlphaCenter
+      - Sources/Shared
+      - path: Resources/Fonts
+        type: folder
+        buildPhase: resources
+      - path: Resources/AppIcon.icns
+        buildPhase: resources
+      - path: Resources/AlphaMeme.jpg
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_NAME: AlphaCenter
+        PRODUCT_BUNDLE_IDENTIFIER: kr.hs.bssm.alphacenter
+        INFOPLIST_FILE: Config/App-Info.plist
+        CODE_SIGN_ENTITLEMENTS: Config/AlphaCenter.entitlements
+        SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
+        ENABLE_DEBUG_DYLIB: NO
+    dependencies:
+      - target: AlphaWidgets
+        embed: true
+  AlphaWidgets:
+    type: app-extension
+    platform: macOS
+    sources:
+      - Sources/AlphaWidgets
+      - Sources/Shared
+      - path: Resources/Fonts
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_NAME: AlphaWidgets
+        PRODUCT_BUNDLE_IDENTIFIER: kr.hs.bssm.alphacenter.widgets
+        INFOPLIST_FILE: Config/Widgets-Info.plist
+        CODE_SIGN_ENTITLEMENTS: Config/AlphaWidgets.entitlements
+        SWIFT_DEFAULT_ACTOR_ISOLATION: nonisolated
+        APPLICATION_EXTENSION_API_ONLY: YES
+        SKIP_INSTALL: YES
+        ENABLE_DEBUG_DYLIB: NO
