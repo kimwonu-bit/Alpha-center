@@ -8,6 +8,8 @@ struct TodoView: View {
     @State private var showGoalManager = false
     @State private var detailTodo: Todo?
     @State private var celebration: Date?
+    @State private var showMoveUndone = false
+    @State private var moveTarget = Date()
 
     private struct Progress: Equatable {
         let day: Date
@@ -66,9 +68,53 @@ struct TodoView: View {
         .sheet(item: $detailTodo) { t in TodoDetailSheet(todo: t) }
         .toolbar {
             ToolbarItemGroup {
+                undoneButtons
                 Button { showGoalManager = true } label: { Label("목표 관리", systemImage: "folder.badge.gearshape") }
                     .help("목표 관리")
             }
+        }
+    }
+
+    // MARK: 못 한 일 옮기기
+
+    private var undoneButtons: some View {
+        let count = store.undoneTodos(on: day).count
+        return Group {
+            Button {
+                withAnimation(.snappy) { store.moveUndoneTodosToNextDay(from: day) }
+            } label: {
+                Label("못 한 일 다음 날로", systemImage: "arrow.turn.up.right")
+            }
+            .disabled(count == 0)
+            .help(count == 0 ? "이 날 못 한 일이 없어요" : "못 한 일 \(count)개를 다음 날로 이동")
+
+            Button {
+                moveTarget = day.adding(days: 1)
+                showMoveUndone = true
+            } label: {
+                Label("못 한 일 지정한 날로", systemImage: "calendar.badge.clock")
+            }
+            .disabled(count == 0)
+            .help(count == 0 ? "이 날 못 한 일이 없어요" : "못 한 일 \(count)개를 지정한 날로 이동")
+        .popover(isPresented: $showMoveUndone) {
+            VStack(spacing: 12) {
+                Text("못 한 일 \(store.undoneTodos(on: day).count)개를 옮길 날").appFont(DS.TextSize.headline, .bold)
+                DatePicker("", selection: $moveTarget, displayedComponents: .date)
+                    .datePickerStyle(.graphical)
+                    .labelsHidden()
+                HStack {
+                    Button("취소") { showMoveUndone = false }
+                    Button("이동") {
+                        withAnimation(.snappy) { store.moveUndoneTodos(from: day, to: moveTarget) }
+                        showMoveUndone = false
+                    }
+                    .buttonStyle(.glassProminent)
+                    .tint(DS.ink)
+                    .disabled(moveTarget.isSameDay(as: day))
+                }
+            }
+            .padding()
+        }
         }
     }
 

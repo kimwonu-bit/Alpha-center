@@ -266,6 +266,25 @@ final class Store {
         scheduleSave()
     }
 
+    /// 그날 끝내지 못한 할 일
+    func undoneTodos(on day: Date) -> [Todo] { todos(on: day).filter { !$0.isDone } }
+
+    /// 그날 끝내지 못한 할 일을 모두 target 날짜로 옮긴다. 옮긴 개수를 돌려준다.
+    @discardableResult
+    func moveUndoneTodos(from day: Date, to target: Date) -> Int {
+        let target = cal.startOfDay(for: target)
+        guard cal.startOfDay(for: day) != target else { return 0 }
+        let ids = undoneTodos(on: day).map(\.id)
+        for id in ids { moveTodo(id, to: target) }
+        return ids.count
+    }
+
+    /// 그날 끝내지 못한 할 일을 다음 날로 옮긴다.
+    @discardableResult
+    func moveUndoneTodosToNextDay(from day: Date) -> Int {
+        moveUndoneTodos(from: day, to: cal.startOfDay(for: day).adding(days: 1))
+    }
+
     /// 지난 미완료 할 일을 오늘로 옮긴다.
     func carryOverIfNeeded() {
         guard UserDefaults.standard.bool(forKey: Keys.autoCarryOver) else { return }
