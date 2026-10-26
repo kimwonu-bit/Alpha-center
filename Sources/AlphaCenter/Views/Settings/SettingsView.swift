@@ -134,6 +134,24 @@ struct SettingsView: View {
             LabeledContent("강조 색상") {
                 ColorPalettePicker(selection: $accentIndex, size: 18)
             }
+            LabeledContent("글자 크기") {
+                Picker("글자 크기", selection: $fonts.scale) {
+                    ForEach(FontManager.scaleSteps, id: \.self) { Text("\(Int($0 * 100))%").tag($0) }
+                }
+                .pickerStyle(.segmented)
+                .labelsHidden()
+                .frame(width: 260)
+            }
+            LabeledContent("글자 두께") {
+                Picker("글자 두께", selection: $fonts.weightShift) {
+                    Text("얇게").tag(-1)
+                    Text("기본").tag(0)
+                    Text("굵게").tag(1)
+                }
+                .pickerStyle(.segmented)
+                .labelsHidden()
+                .frame(width: 260)
+            }
             ForEach(FontOption.allCases) { option in
                 FontRow(option: option, selected: fonts.selected == option, available: fonts.isAvailable(option)) {
                     fonts.selected = option

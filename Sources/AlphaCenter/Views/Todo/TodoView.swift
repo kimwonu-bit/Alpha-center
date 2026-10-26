@@ -8,11 +8,16 @@ struct TodoView: View {
     @State private var showGoalManager = false
     @State private var detailTodo: Todo?
     @State private var celebration: Date?
-    @State private var dayChanged = false
 
-    private var allDone: Bool {
+    private struct Progress: Equatable {
+        let day: Date
+        let done: Int
+        let total: Int
+    }
+
+    private var progress: Progress {
         let c = store.completion(on: day)
-        return c.total > 0 && c.done == c.total
+        return Progress(day: day, done: c.done, total: c.total)
     }
 
     private var day: Date { router.todoDate }
@@ -47,15 +52,12 @@ struct TodoView: View {
         }
         .background(DS.bg)
         .overlay { if let t = celebration { CelebrationOverlay(start: t).id(t) } }
-        .onChange(of: allDone) { old, new in
-            // 마지막 할 일을 체크해서 방금 전부 끝났을 때만 (날짜를 넘겨 볼 때는 제외)
-            guard new, !old, !dayChanged else { return }
+        .onChange(of: progress) { old, new in
+            // 같은 날짜에서 할 일 하나를 체크해 방금 전부 끝났을 때만 (날짜 이동·할 일 추가/삭제는 제외)
+            guard old.day == new.day, old.total == new.total, new.total > 0,
+                  new.done == new.total, new.done == old.done + 1 else { return }
             celebration = Date()
             Task { try? await Task.sleep(for: .seconds(3.2)); celebration = nil }
-        }
-        .onChange(of: router.todoDate) { _, _ in
-            dayChanged = true
-            Task { try? await Task.sleep(for: .milliseconds(100)); dayChanged = false }
         }
         .onAppear { store.materializeRoutines(for: day) }
         .onChange(of: router.todoDate) { _, new in store.materializeRoutines(for: new) }
@@ -631,6 +633,11 @@ struct DailyNoteCard: View {
     @State private var text = ""
     @State private var mood = ""
     private let moods = ["😀", "🙂", "😐", "😮‍💨", "😢", "🔥"]
+    @State private var pickedEmoji = ""
+    @FocusState private var emojiFieldFocused: Bool
+
+    /// 목록에 없는, 이모지 선택기로 고른 기분
+    private var customMood: String? { mood.isEmpty || moods.contains(mood) ? nil : mood }
 
     var body: some View {
         VStack(alignment: .leading, spacing: DS.Space.s) {
@@ -640,7 +647,7 @@ struct DailyNoteCard: View {
                 Text(day.formatted("M월 d일 EEEE")).appFont(DS.TextSize.caption).opacity(0.6)
             }
             HStack(spacing: 6) {
-                ForEach(moods, id: \.self) { m in
+                ForEach(moods + (customMood.map { [$0] } ?? []), id: \.self) { m in
                     Text(m)
                         .font(.system(size: mood == m ? 30 : 22))
                         .opacity(mood.isEmpty || mood == m ? 1 : 0.4)
@@ -651,6 +658,7 @@ struct DailyNoteCard: View {
                             save()
                         }
                 }
+                emojiPickerButton
             }
             TextField("", text: $text, prompt: Text("오늘은 어땠나요? 한 줄로 남겨요").foregroundStyle(DS.textSecondary), axis: .vertical)
                 .textFieldStyle(.plain)
@@ -666,6 +674,35 @@ struct DailyNoteCard: View {
         .glassEffect(.regular, in: .rect(cornerRadius: DS.Radius.card))
         .onAppear(perform: loadNote)
         .onChange(of: day) { _, _ in loadNote() }
+    }
+
+    /// 맥 이모지 선택기(fn / 🌐 키로 여는 것과 같은 창)를 열어 기분을 고른다
+    private var emojiPickerButton: some View {
+        ZStack {
+            // 선택기가 글자를 넣어 줄 보이지 않는 입력칸
+            TextField("", text: $pickedEmoji)
+                .textFieldStyle(.plain)
+                .focused($emojiFieldFocused)
+                .frame(width: 1, height: 1)
+                .opacity(0.01)
+                .onChange(of: pickedEmoji) { _, new in
+                    guard let e = new.last(where: { $0.unicodeScalars.contains { $0.properties.isEmojiPresentation || ($0.properties.isEmoji && $0.value > 0xFF) } }) else { return }
+                    withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) { mood = String(e) }
+                    pickedEmoji = ""
+                    save()
+                }
+            Button {
+                emojiFieldFocused = true
+                DispatchQueue.main.async { NSApp.orderFrontCharacterPalette(nil) }
+            } label: {
+                Image(systemName: "face.smiling.inverse")
+                    .font(.system(size: 18))
+                    .frame(width: 38, height: 38)
+                    .background(.white.opacity(0.55), in: .circle)
+            }
+            .buttonStyle(.plain)
+            .help("모든 이모지에서 고르기")
+        }
     }
 
     private func loadNote() {

@@ -20,6 +20,7 @@ enum DebugSnapshot {
                     switch tab {
                     case .todo: TodoView()
                     case .routine: RoutineView()
+                    case .diary: DiaryView()
                     case .pomodoro: PomodoroView()
                     case .calendar: CalendarView()
                     case .settings: SettingsView()

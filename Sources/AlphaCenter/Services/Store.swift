@@ -388,6 +388,12 @@ final class Store {
         return data.notes.first { $0.date == day } ?? DailyNote(date: day)
     }
 
+    /// 쓴 일기 전체 (최신순)
+    var diaryEntries: [DailyNote] {
+        data.notes.filter { !$0.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || !$0.mood.isEmpty }
+            .sorted { $0.date > $1.date }
+    }
+
     /// 그날 일기를 썼는가
     func hasDiary(on day: Date) -> Bool {
         let day = cal.startOfDay(for: day)

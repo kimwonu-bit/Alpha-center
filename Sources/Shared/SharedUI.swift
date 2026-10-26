@@ -88,6 +88,13 @@ nonisolated enum AppWeight: Sendable {
         }
     }
 
+    /// 한 단계씩 가볍게(-1) / 굵게(+1). Regular ~ Bold 범위를 벗어나지 않는다.
+    func shifted(by step: Int) -> AppWeight {
+        let all: [AppWeight] = [.regular, .medium, .bold]
+        let i = all.firstIndex(of: self) ?? 0
+        return all[min(max(i + step, 0), all.count - 1)]
+    }
+
     var swiftUI: Font.Weight {
         switch self {
         case .regular: .regular

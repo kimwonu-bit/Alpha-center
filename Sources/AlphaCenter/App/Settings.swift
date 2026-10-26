@@ -24,6 +24,8 @@ enum Keys {
     static let soundName = "soundName"
     static let soundVolume = "soundVolume"
     static let fontOption = "fontOption"
+    static let fontScale = "fontScale"
+    static let fontWeightShift = "fontWeightShift"
     static let accentIndex = "accentIndex"
     static let todoTopMode = "todoTopMode"
     static let calendarMode = "calendarMode"

@@ -10,6 +10,15 @@ final class FontManager {
     var selected: FontOption = .system {
         didSet { UserDefaults.standard.set(selected.rawValue, forKey: Keys.fontOption) }
     }
+    /// 글자 크기 배율 (1.0 = 기본)
+    static let scaleSteps: [Double] = [0.85, 1.0, 1.15, 1.3, 1.5]
+    var scale: Double = 1.0 {
+        didSet { UserDefaults.standard.set(scale, forKey: Keys.fontScale) }
+    }
+    /// 글자 두께 조절: -1 얇게, 0 기본, +1 굵게 (크기와 별개)
+    var weightShift: Int = 0 {
+        didSet { UserDefaults.standard.set(weightShift, forKey: Keys.fontWeightShift) }
+    }
     private(set) var availability: [FontOption: Bool] = [:]
     @ObservationIgnored private var faceCache: [String: String] = [:]
 
@@ -20,6 +29,9 @@ final class FontManager {
         try? FileManager.default.createDirectory(at: Self.userFontsDirectory, withIntermediateDirectories: true)
         registerFonts()
         selected = FontOption(rawValue: UserDefaults.standard.string(forKey: Keys.fontOption) ?? "") ?? .system
+        let saved = UserDefaults.standard.double(forKey: Keys.fontScale)
+        scale = saved > 0 ? saved : 1.0
+        weightShift = UserDefaults.standard.integer(forKey: Keys.fontWeightShift)
     }
 
     func registerFonts() {
@@ -44,6 +56,9 @@ final class FontManager {
     }
 
     func font(size: CGFloat, weight: AppWeight = .regular, option: FontOption? = nil) -> Font {
+        // 서체 미리보기처럼 서체를 직접 지정한 경우는 배율을 적용하지 않는다
+        let size = option == nil ? size * scale : size
+        let weight = option == nil ? weight.shifted(by: weightShift) : weight
         let option = option ?? selected
         if option != .system, let name = faceName(option, weight) {
             return .custom(name, size: size)

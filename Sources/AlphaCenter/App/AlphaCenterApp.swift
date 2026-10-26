@@ -3,13 +3,14 @@ import Observation
 import SwiftUI
 
 enum AppTab: String, CaseIterable, Identifiable {
-    case todo, routine, pomodoro, calendar, settings
+    case todo, routine, diary, pomodoro, calendar, settings
     var id: String { rawValue }
 
     var label: String {
         switch self {
         case .todo: "투두"
         case .routine: "루틴"
+        case .diary: "일기"
         case .pomodoro: "포모도로"
         case .calendar: "캘린더"
         case .settings: "설정"
@@ -20,6 +21,7 @@ enum AppTab: String, CaseIterable, Identifiable {
         switch self {
         case .todo: "checklist"
         case .routine: "repeat"
+        case .diary: "book.closed"
         case .pomodoro: "timer"
         case .calendar: "calendar"
         case .settings: "gearshape"
@@ -200,6 +202,7 @@ struct RootView: View {
                 switch router.tab {
                 case .todo: TodoView()
                 case .routine: RoutineView()
+                case .diary: DiaryView()
                 case .pomodoro: PomodoroView()
                 case .calendar: CalendarView()
                 case .settings: SettingsView()
@@ -212,7 +215,7 @@ struct RootView: View {
         .environment(\.dsAccent, Palette.color(accentIndex))
         .tint(Palette.color(accentIndex))
         .accentColor(Palette.color(accentIndex))
-        .id(fonts.selected) // 서체 변경 시 전체 다시 그리기
+        .id("\(fonts.selected.rawValue)-\(fonts.scale)-\(fonts.weightShift)") // 서체·글자 크기 변경 시 전체 다시 그리기
         .onOpenURL { router.handle($0) }
     }
 }
