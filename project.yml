@@ -11,10 +11,10 @@ settings:
     MACOSX_DEPLOYMENT_TARGET: "26.0"
     MARKETING_VERSION: "1.1.0"
     CURRENT_PROJECT_VERSION: "2"
-    # 개발자 인증서가 없으면 ad-hoc 서명 (scripts/build_app.sh에서 SIGN_IDENTITY로 바꿀 수 있다)
-    CODE_SIGN_IDENTITY: "-"
-    CODE_SIGN_STYLE: Manual
-    DEVELOPMENT_TEAM: ""
+    # Xcode에 로그인한 Apple ID(Personal Team)로 자동 서명한다. 위젯 확장은 팀 서명이 있어야 시스템이 실행해 준다.
+    CODE_SIGN_IDENTITY: "Apple Development"
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: RT2BSAZK34
     ENABLE_HARDENED_RUNTIME: YES
     SWIFT_APPROACHABLE_CONCURRENCY: YES
 targets:

@@ -38,6 +38,7 @@
 		B07AECBC41FBE36CC443206A /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837FB6E1B338F38F5E145A70 /* MenuBarView.swift */; };
 		B3CDE1014A26EBB9985F9534 /* TimerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86645B05FCD040383720477F /* TimerEngine.swift */; };
 		B72A5EAA09A55797115944C6 /* WidgetIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0362C22DA1005E8C8173637E /* WidgetIntents.swift */; };
+		BA4BF5945F19C46B2D1892C6 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CDBA0D7C322F667133348 /* DiaryView.swift */; };
 		C29C17900E7EC39073177171 /* TimerLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5958D58F68DF756DFF4D256 /* TimerLogic.swift */; };
 		C7D9B803DFD61D4A735D7E0A /* TodoSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E78F66574FFAB70D266E85 /* TodoSheets.swift */; };
 		CCB0AF81E8B943988CE2DBB1 /* RoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26C2CFA075B83589F9ED00E /* RoutineView.swift */; };
@@ -84,6 +85,7 @@
 		4455D416BD61B7222D58F016 /* AlphaWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AlphaWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		521789CF83AF8AE873231E82 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		5B12A848B072A671B443B81C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		5C9CDBA0D7C322F667133348 /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
 		5E35D455FEC6AFCA4C49018A /* DebugSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugSnapshot.swift; sourceTree = "<group>"; };
 		66A134A0486E69539D695537 /* SharedUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUI.swift; sourceTree = "<group>"; };
 		6D6D2F1D136BEB6A62DBBB4D /* AlphaCenterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaCenterApp.swift; sourceTree = "<group>"; };
@@ -120,12 +122,21 @@
 			children = (
 				043986F034CF3535F12281E9 /* Calendar */,
 				2F68CFD1C58D42D88A96EEFC /* Common */,
+				195223F15F16B5F284CF5680 /* Diary */,
 				F74A317DF6909DFC1828D2F2 /* Pomodoro */,
 				4C69564448AF6C054846FA7B /* Routine */,
 				C2BA9BC30DDB3A9F89981408 /* Settings */,
 				E3EECCAA6D8358696B7B81DB /* Todo */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		195223F15F16B5F284CF5680 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				5C9CDBA0D7C322F667133348 /* DiaryView.swift */,
+			);
+			path = Diary;
 			sourceTree = "<group>";
 		};
 		2F68CFD1C58D42D88A96EEFC /* Common */ = {
@@ -315,12 +326,12 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					563DEC341B3D790C95AFDFA2 = {
-						DevelopmentTeam = "";
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = RT2BSAZK34;
+						ProvisioningStyle = Automatic;
 					};
 					E044D22134C4137F650710DE = {
-						DevelopmentTeam = "";
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = RT2BSAZK34;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -393,6 +404,7 @@
 				A95FCF25A1028B449083A6F4 /* Components.swift in Sources */,
 				5EB4EBA1C9543764CFA79B3E /* DebugSnapshot.swift in Sources */,
 				7D378B24E6C1760D461A61D1 /* DesignSystem.swift in Sources */,
+				BA4BF5945F19C46B2D1892C6 /* DiaryView.swift in Sources */,
 				1784DBD532F335AC023A347C /* EventEditor.swift in Sources */,
 				05C8A1ADF3A764E456B552C3 /* FontManager.swift in Sources */,
 				B07AECBC41FBE36CC443206A /* MenuBarView.swift in Sources */,
@@ -475,12 +487,12 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RT2BSAZK34;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -538,12 +550,12 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RT2BSAZK34;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;

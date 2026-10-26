@@ -1,12 +1,12 @@
 #!/bin/zsh
-# Xcode로 앱 + 위젯 확장을 빌드해 build/코치조의 ALPHA 육성 센터.app 을 만든다.
+# Xcode로 앱 + 위젯 확장을 빌드해 build/AlphaCenter.app 을 만든다.
 # 사용법: scripts/build_app.sh [Release|Debug]
-#   SIGN_IDENTITY="Developer ID Application: ..." 를 주면 그 인증서로 서명한다 (기본: ad-hoc).
+#   SIGN_IDENTITY="Developer ID Application: ..." 를 주면 그 인증서로 서명한다 (기본: project.yml의 Apple Development 자동 서명).
 set -euo pipefail
 
 CONFIG="${1:-Release}"
 ROOT="${0:A:h:h}"
-APP_NAME="코치조의 ALPHA 육성 센터"
+APP_NAME="AlphaCenter"  # 파일 이름은 영문이어야 위젯이 등록된다 (한글 경로는 위젯 시스템이 거부). 표시 이름은 Info.plist의 CFBundleDisplayName
 export DEVELOPER_DIR="${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Developer}"
 
 cd "$ROOT"
@@ -22,7 +22,7 @@ if [[ -n "${SIGN_IDENTITY:-}" ]]; then
 fi
 
 xcodebuild -project AlphaCenter.xcodeproj -scheme AlphaCenter -configuration "$CONFIG" \
-  -derivedDataPath build/DerivedData "${SIGN_ARGS[@]}" build | grep -E "error:|warning: |BUILD" || true
+  -derivedDataPath build/DerivedData -allowProvisioningUpdates "${SIGN_ARGS[@]}" build | grep -E "error:|warning: |BUILD" || true
 
 PRODUCT="build/DerivedData/Build/Products/$CONFIG/AlphaCenter.app"
 [[ -d "$PRODUCT" ]] || { echo "❌ 빌드 실패"; exit 1; }
